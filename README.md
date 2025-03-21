@@ -126,4 +126,12 @@ Kode setelah refactoring menghilangkan duplikasi kdoe dan mempermudah proses jik
 Pada kode ini, teradapat penambahan rute `/sleep` yang menyebabkan program "tidur" seelama 5 detik sebelum lannjut megembalikan respons. Jika kita membuka 2 tab dengan satu thread, misal `/sleep` lalu `/`, maka respons `/` akan menunggu `thread::sleep` selesai sebelum lanjut merespons.
 
 Hal ini terjadi karena program saat ini merespons HTTP requeset sacara sinkronus. Jika satu permintaan membutuhkan waktu yang lama, maka permintaan lain perlu menunggu peermintaan sebelumnya selesai.
+---
+
+## MILESTONE 5
+### REFLECTION
+
+ThreeadPool memungkinkan untuk menjalankan beberapa task secara paralel dengan menggunakan thread-thread yang dibuat terlebih dahulu sebelumnya berdasarkan parameter size.
+
+Threadpool memiliki dua komponen utama. Yaitu worker (kumpulan thread) yang mennympan daftar threead yang bisa digunakan untuk melakukan task dan sender yang digunakan untuk mengirim task ke thread yang tersedia.
 
